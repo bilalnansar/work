@@ -53,14 +53,17 @@ const Footer = () => {
     <>
       {/* MAIN FOOTER */}
       <footer className="relative w-full overflow-hidden border-t border-white/[0.07] bg-[#080f1d] text-white">
-        {/* FOOTER BACKGROUND GLOW */}
+
+        {/* BACKGROUND GLOW */}
         <div className="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-[#326cff]/[0.07] blur-[100px]" />
 
         <div className="relative mx-auto max-w-[1120px] px-5 py-12 sm:px-8 md:py-14 lg:px-3 lg:py-16">
+
           {/* TOP SECTION */}
           <div className="grid gap-10 border-b border-white/[0.08] pb-10 md:grid-cols-[1.3fr_1fr] md:items-start">
+
             {/* BRAND */}
-            <div className="max-w-[400px]">
+            <div className="max-w-[420px]">
               <Link
                 href="/"
                 className="inline-flex items-center"
@@ -71,18 +74,18 @@ const Footer = () => {
                   alt="Font Sistemas"
                   width={160}
                   height={75}
-                  className="h-[65px] w-[145px] object-contain object-left"
+                  className="h-[68px] w-[150px] object-contain object-left"
                 />
               </Link>
 
-              <p className="mt-4 text-[13px] leading-[1.9] text-[#98a5b8] sm:text-[14px]">
+              <p className="mt-4 text-sm leading-7 text-[#98a5b8] sm:text-[15px]">
                 Expertos en captura de datos para inventarios y activos fijos.
                 Transformamos la gestión empresarial mediante tecnología RFID,
                 código de barras e IoT.
               </p>
 
               {/* SOCIAL ICONS */}
-              <div className="mt-6 flex items-center gap-2.5">
+              <div className="mt-6 flex items-center gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
 
@@ -93,32 +96,35 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      className="flex h-[38px] w-[38px] items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.035] text-[#aab3c2] transition-all duration-300 hover:-translate-y-1 hover:border-[#326cff]/50 hover:bg-[#326cff]/15 hover:text-white"
+                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.035] text-[#aab3c2] transition-all duration-300 hover:-translate-y-1 hover:border-[#326cff]/50 hover:bg-[#326cff]/15 hover:text-white"
                     >
-                      <Icon size={16} />
+                      <Icon size={17} />
                     </a>
                   );
                 })}
               </div>
             </div>
 
-            {/* NAVIGATION */}
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-[1fr_1fr]">
+            {/* NAVIGATION + CONTACT */}
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2">
+
+              {/* NAVIGATION */}
               <div>
-                <h3 className="text-[13px] font-bold tracking-[1px] text-white sm:text-[14px]">
+                <h3 className="text-sm font-bold tracking-[1px] text-white sm:text-base">
                   Navegación
                 </h3>
 
-                <div className="mt-5 flex flex-col items-start gap-3.5">
+                <div className="mt-5 flex flex-col items-start gap-4">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="group inline-flex items-center gap-2 text-[12px] text-[#98a5b8] transition-colors hover:text-white sm:text-[13px]"
+                      className="group inline-flex items-center gap-2 text-[13px] text-[#98a5b8] transition-colors hover:text-white sm:text-sm"
                     >
                       {item.name}
+
                       <ArrowUpRight
-                        size={13}
+                        size={14}
                         className="opacity-0 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
                       />
                     </Link>
@@ -126,42 +132,47 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* LOCATION */}
+              {/* CONTACT */}
               <div>
-                <h3 className="text-[13px] font-bold tracking-[1px] text-white sm:text-[14px]">
+                <h3 className="text-sm font-bold tracking-[1px] text-white sm:text-base">
                   Contacto
                 </h3>
 
                 <div className="mt-5 flex flex-col gap-5">
+
+                  {/* LOCATION */}
                   <div className="flex items-start gap-3">
                     <MapPin
-                      size={17}
+                      size={18}
                       className="mt-0.5 shrink-0 text-[#5990ff]"
                     />
 
                     <div>
-                      <p className="text-[12px] font-semibold text-[#e5ebf6] sm:text-[13px]">
+                      <p className="text-sm font-semibold text-[#e5ebf6]">
                         San José
                       </p>
-                      <p className="mt-1 text-[11px] text-[#8998ad] sm:text-[12px]">
+
+                      <p className="mt-1 text-xs text-[#8998ad] sm:text-[13px]">
                         Costa Rica
                       </p>
                     </div>
                   </div>
 
+                  {/* PHONE */}
                   <a
                     href="tel:+50687853480"
-                    className="flex items-center gap-3 text-[12px] text-[#98a5b8] transition-colors hover:text-white sm:text-[13px]"
+                    className="flex items-center gap-3 text-[13px] text-[#98a5b8] transition-colors hover:text-white sm:text-sm"
                   >
-                    <Phone size={16} className="shrink-0 text-[#5990ff]" />
+                    <Phone size={17} className="shrink-0 text-[#5990ff]" />
                     (+506) 8785-3480
                   </a>
 
+                  {/* EMAIL */}
                   <a
                     href="mailto:info@fontsistemas.com"
-                    className="flex items-center gap-3 break-all text-[12px] text-[#98a5b8] transition-colors hover:text-white sm:text-[13px]"
+                    className="flex items-center gap-3 break-all text-[13px] text-[#98a5b8] transition-colors hover:text-white sm:text-sm"
                   >
-                    <Mail size={16} className="shrink-0 text-[#5990ff]" />
+                    <Mail size={17} className="shrink-0 text-[#5990ff]" />
                     info@fontsistemas.com
                   </a>
                 </div>
@@ -169,26 +180,29 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* WOMEN OWNED + BOTTOM */}
+          {/* BOTTOM SECTION */}
           <div className="flex flex-col justify-between gap-7 pt-8 sm:flex-row sm:items-end">
+
+            {/* WOMEN OWNED */}
             <div>
-              <p className="text-[9px] font-bold tracking-[2px] text-[#77869c]">
+              <p className="text-[10px] font-bold tracking-[2px] text-[#77869c]">
                 NUESTRO COMPROMISO
               </p>
 
               <div className="mt-3 flex items-center gap-3">
                 <div className="leading-[0.85] text-white">
-                  <p className="text-[19px] font-black tracking-tight sm:text-[21px]">
+                  <p className="text-xl font-black tracking-tight sm:text-[22px]">
                     WOMEN
                   </p>
-                  <p className="text-[19px] font-black tracking-tight sm:text-[21px]">
+
+                  <p className="text-xl font-black tracking-tight sm:text-[22px]">
                     OWNED
                   </p>
                 </div>
 
-                <div className="h-9 w-px bg-white/15" />
+                <div className="h-10 w-px bg-white/15" />
 
-                <span className="max-w-[150px] text-[9px] leading-[1.6] tracking-[1px] text-[#8998ad]">
+                <span className="max-w-[150px] text-[10px] leading-[1.7] tracking-[1px] text-[#8998ad]">
                   EMPOWERING
                   <br />
                   INNOVATION
@@ -196,12 +210,13 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* COPYRIGHT */}
             <div className="text-left sm:text-right">
-              <p className="text-[11px] text-[#8998ad] sm:text-[12px]">
-                © {new Date().getFullYear()} Font Sistemas.
+              <p className="text-xs text-[#8998ad] sm:text-[13px]">
+                © 2026 Font Sistemas.
               </p>
 
-              <p className="mt-1 text-[10px] text-[#65748a] sm:text-[11px]">
+              <p className="mt-2 text-[11px] text-[#65748a] sm:text-xs">
                 RFID · IoT · Inventarios · Trazabilidad
               </p>
             </div>
@@ -219,7 +234,7 @@ const Footer = () => {
       >
         <FaWhatsapp size={27} />
 
-        <span className="pointer-events-none absolute right-[68px] whitespace-nowrap rounded-xl border border-white/10 bg-[#111b2b] px-4 py-3 text-[12px] font-medium text-white opacity-0 shadow-xl transition-all duration-300 group-hover:opacity-100">
+        <span className="pointer-events-none absolute right-[68px] whitespace-nowrap rounded-xl border border-white/10 bg-[#111b2b] px-4 py-3 text-xs font-medium text-white opacity-0 shadow-xl transition-all duration-300 group-hover:opacity-100">
           ¿En qué le podemos ayudar?
         </span>
       </a>
